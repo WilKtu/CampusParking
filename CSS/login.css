@@ -1,28 +1,68 @@
-/* Estilos básicos para el login */
 body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+
+nav {
+    background-color: #444;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    flex-wrap: nowrap;
+    overflow-x: auto;
 }
 
+li {
+    list-style: none;
+    margin: 0 15px;
+    display: inline-block;
+    box-shadow: 0px 2px 5px #f0f0f0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    background-color: #555;
+}
+
+
 .login-container {
-    background-color: #fff;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzWtUZPkXS9Xx8w2Jgj-uUhKS0e1wGnx60ig&s);
+    background-size:cover;
+    background-position: center;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 400px;
+    margin: 40px auto; 
 }
 
 .login-container h1 {
     text-align: center;
-    color: #333;
+    color: #fff8f8;
     margin-bottom: 20px;
 }
+
 
 .form-group {
     margin-bottom: 15px;
@@ -31,21 +71,23 @@ body {
 .form-group label {
     display: block;
     margin-bottom: 5px;
-    color: #444;
+    color: #ffffff;
 }
 
 .form-group input {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    transition: border-color 0.3s ease;
 }
 
 .form-group input:focus {
     border-color: #007bff;
     outline: none;
 }
+
 
 .login-btn {
     width: 100%;
@@ -56,15 +98,11 @@ body {
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .login-btn:hover {
     background-color: #0056b3;
 }
 
-.error-message {
-    color: red;
-    font-size: 14px;
-    text-align: center;
-    margin-top: 10px;
-}
+

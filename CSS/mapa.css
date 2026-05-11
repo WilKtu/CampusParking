@@ -5,6 +5,40 @@ body {
     padding: 0;
     background-color: #f0f0f0;
 }
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+nav {
+    background-color: #444;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap; 
+    overflow-x: auto; 
+}
+li {
+    list-style: none;
+    margin: 0 15px;
+    display: inline-block; 
+    box-shadow: #f0f0f0 0px 2px 5px; 
+}
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px; 
+    background-color: #333;
+    border-radius: 10px;
+    padding: 8px 12px; 
+}
+a:hover {
+    text-decoration: underline;
+}
+
+
 h1 {
     text-align: center;
     margin: 20px 0;
