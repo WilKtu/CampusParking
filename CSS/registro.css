@@ -1,0 +1,241 @@
+/* --- Paleta de Colores ---
+   Asfalto: #2c3e50
+   Amarillo Vial: #f1c40f
+   Verde Libre: #2ecc71
+   Rojo Ocupado: #e74c3c
+   Gris Cemento: #ecf0f1
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #ecf0f1; /* Gris cemento */
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+/* Navegación de regreso */
+.back-nav {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.back-nav a {
+    color: #f1c40f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-nav a:hover {
+    color: #f1c40f;
+}
+
+/* Contenedor Principal */
+.registro-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Formulario más pequeño que el mapa */
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* Estilo del Formulario */
+.registro-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-top: 6px solid #f1c40f;
+}
+
+.registro-box h2 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.registro-box p {
+    color: #7f8c8d;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #bdc3c7;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #f1c40f;
+    box-shadow: 0 0 8px rgba(241, 196, 15, 0.2);
+}
+
+.input-group input[readonly] {
+    background-color: #f8f9fa;
+    cursor: default;
+}
+
+.btn-login {
+    width: 100%;
+    background: #2c3e50;
+    color: #f1c40f;
+    border: none;
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.btn-login:hover {
+    background: #1a252f;
+}
+
+/* Estilo del Mapa / Croquis */
+.map-section {
+    background: #2c3e50; /* Asfalto */
+    padding: 40px;
+    border-radius: 12px;
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.map-section h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.parking-map {
+    position: relative;
+    background: #34495e;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px dashed #f1c40f;
+}
+
+/* Línea de carretera central */
+.road {
+    height: 40px;
+    margin: 20px 0;
+    border-top: 2px dashed rgba(255, 255, 255, 0.3);
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+}
+
+.slots-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.slot {
+    aspect-ratio: 1 / 1.2;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.slot.available {
+    background: rgba(46, 204, 113, 0.1);
+    border-color: #2ecc71;
+    color: #2ecc71;
+}
+
+.slot.available:hover {
+    background: #2ecc71;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.slot.occupied {
+    background: rgba(231, 76, 60, 0.2);
+    border-color: #e74c3c;
+    color: #e74c3c;
+    cursor: not-allowed;
+    position: relative;
+}
+
+.slot.occupied::after {
+    content: "🚗";
+    font-size: 1.2rem;
+    position: absolute;
+    opacity: 0.5;
+}
+
+/* Leyenda */
+.map-legend {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.box {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.box.available { background: #2ecc71; }
+.box.occupied { background: #e74c3c; }
+
+/* --- Responsividad --- */
+@media (max-width: 992px) {
+    .registro-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-section {
+        order: -1; /* El mapa sale primero en tablets/móvil */
+    }
+}
+
+@media (max-width: 600px) {
+    .slots-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .map-section {
+        padding: 20px;
+    }
+}

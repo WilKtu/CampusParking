@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,19 +8,52 @@
     <title>CampusParking</title>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="registro.html">Registro</a></li>
-            <li><a href="login.html">Iniciar Sesión</a></li>
-            <li><a href="mapaestacionamiento.html">Mapa de Estacionamiento</a></li>
-        </ul>
-    </nav>
-    <section>
+    <header>
+        <header>
+            <nav class="nav-container">
+                <ul class="nav-user">
+                    <li><a href="login.html" class="link-login">Iniciar Sesión</a></li>
+                    <li><a href="registro.html" class="btn-small">Registrar Auto</a></li>
+                </ul>
+            </nav>
+        </header>
+    </header>
+
+    <section id="inicio" class="hero">
         <h1>Bienvenido a CampusParking</h1>
-        <p>Tu solucion.</p>
-        <img src="Img/img.jpeg" alt="estacionamiento">
-        <img src="Img/esta.jpeg" alt="estacionamiento">
+        <p>Estacionamiento seguro y moderno en el corazón de Guatemala City. Reserva tu espacio ahora.</p>
+        <a href="#servicios" class="btn">Reservar Ahora</a>
     </section>
-    
-</body>
+
+    <section id="servicios" class="features">
+        <h2>Nuestros Servicios</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <i>🚗</i>
+                <h3>Estacionamiento Seguro</h3>
+                <p>24/7 con vigilancia CCTV y seguridad profesional.</p>
+            </div>
+            <div class="feature">
+                <i>⚡</i>
+                <h3>Carga Eléctrica</h3>
+                <p>Estaciones para vehículos eléctricos disponibles.</p>
+            </div>
+            <div class="feature">
+                <i>💳</i>
+                <h3>Pago Fácil</h3>
+                <p>Tarjetas, QR y apps móviles aceptadas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="precios">
+        <h2>Precios Accesibles</h2>
+        <p>Hora: Q5 | Día: Q50 | Mes: Q800. ¡Ofertas especiales para residentes!</p>
+    </section>
+
+    <footer id="contacto">
+        <p>&copy; 2026 SmartPark Guatemala. Tel: +502 1234-5678 | Email: info@smartpark.gt</p>
+        <p>Dirección: Zona 10, Guatemala City</p>
+    </footer>
+</body>    
 </html>
