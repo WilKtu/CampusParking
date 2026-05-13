@@ -19,7 +19,8 @@
                 <h2>Registrar Vehículo</h2>
                 <p>Ingresa los datos para asignar un espacio</p>
                 
-                <form>
+                <!-- ...existing code... -->
+                <form> 
                     <div class="input-group">
                         <label>Placa del Vehículo</label>
                         <input type="text" placeholder="P-000ABC" required>
@@ -37,13 +38,16 @@
                         <input type="text" id="selected-slot" placeholder="Toca un espacio en el mapa" readonly>
                     </div>
                     <button type="submit" class="btn-login">Confirmar Registro</button>
+                    <button type="button" class="btn-edit">Editar Registro</button>
+                    <button type="button" class="btn-delete">Eliminar Registro</button>
                 </form>
+<!-- ...existing code... -->
             </div>
         </section>
 
         <!-- Croquis de Espacios -->
         <section class="map-section">
-            <h3>Mapa de Disponibilidad (Nivel 1)</h3>
+            <h3>Mapa de Disponibilidad </h3>
             <div class="parking-map">
                 <!-- Pasillo central -->
                 <div class="road"></div>
@@ -51,18 +55,41 @@
                 <!-- Espacios de parqueo -->
                 <div class="slots-container">
                     <!-- Fila Superior -->
-                    <div class="slot occupied" data-id="A1">A1</div>
-                    <div class="slot available" data-id="A2">A2</div>
-                    <div class="slot available" data-id="A3">A3</div>
-                    <div class="slot occupied" data-id="A4">A4</div>
-                    <div class="slot available" data-id="A5">A5</div>
+                    <div class="slot" data-id="A1">A1</div>
+                    <div class="slot" data-id="A2">A2</div>
+                    <div class="slot" data-id="A3">A3</div>
+                    <div class="slot" data-id="A4">A4</div>
+                    <div class="slot" data-id="A5">A5</div>
+                    <div class="slot" data-id="A6">A6</div>
+                    <div class="slot" data-id="A7">A7</div>
+                    <div class="slot" data-id="A8">A8</div>
+                    <div class="slot" data-id="A9">A9</div>
+                    <div class="slot" data-id="A10">A10</div>
+                    <div class="slot" data-id="A11">A11</div>
+                    <div class="slot" data-id="A12">A12</div>
+                    <div class="slot" data-id="A13">A13</div>
+                    <div class="slot" data-id="A14">A14</div>
+                    <div class="slot" data-id="A15">A15</div>
+                    <div class="slot" data-id="A16">A16</div>
+                    <div class="slot" data-id="A17">A17</div>
+                    <div class="slot" data-id="A18">A18</div>
+                    <div class="slot" data-id="A19">A19</div>
+                    <div class="slot" data-id="A20">A20</div>
+
                     
                     <!-- Fila Inferior -->
-                    <div class="slot available" data-id="B1">B1</div>
-                    <div class="slot available" data-id="B2">B2</div>
-                    <div class="slot occupied" data-id="B3">B3</div>
-                    <div class="slot available" data-id="B4">B4</div>
-                    <div class="slot available" data-id="B5">B5</div>
+                    <div class="slot-moto" data-id="B1">B1</div>
+                    <div class="slot-moto" data-id="B2">B2</div>
+                    <div class="slot-moto" data-id="B3">B3</div>
+                    <div class="slot-moto" data-id="B4">B4</div>
+                    <div class="slot-moto" data-id="B5">B5</div>
+                    <div class="slot-moto" data-id="B6">B6</div>
+                    <div class="slot-moto" data-id="B7">B7</div>
+                    <div class="slot-moto" data-id="B8">B8</div>
+                    <div class="slot-moto" data-id="B9">B9</div>
+                    <div class="slot-moto" data-id="B10">B10</div>
+                    
+
                 </div>
             </div>
             <div class="map-legend">

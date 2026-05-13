@@ -1,11 +1,3 @@
-/* --- Paleta de Colores ---
-   Asfalto: #2c3e50
-   Amarillo Vial: #f1c40f
-   Verde Libre: #2ecc71
-   Rojo Ocupado: #e74c3c
-   Gris Cemento: #ecf0f1
-*/
-
 * {
     margin: 0;
     padding: 0;
@@ -14,12 +6,12 @@
 
 body {
     font-family: 'Segoe UI', Roboto, sans-serif;
-    background-color: #ecf0f1; /* Gris cemento */
+    background-color: #ecf0f1; 
     color: #2c3e50;
     line-height: 1.6;
 }
 
-/* Navegación de regreso */
+
 .back-nav {
     position: absolute;
     top: 20px;
@@ -36,17 +28,15 @@ body {
     color: #f1c40f;
 }
 
-/* Contenedor Principal */
 .registro-container {
     max-width: 1200px;
     margin: 20px auto;
-    display: grid;
-    grid-template-columns: 1fr 1.5fr; /* Formulario más pequeño que el mapa */
+    display: flex; 
+    flex-direction: column; 
     gap: 30px;
     padding: 0 20px;
 }
 
-/* Estilo del Formulario */
 .registro-box {
     background: #fff;
     padding: 30px;
@@ -98,6 +88,55 @@ body {
     cursor: default;
 }
 
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    justify-content: center; 
+}
+
+form button {
+    flex: 1; 
+    max-width: 150px; 
+}
+
+.btn-edit {
+    width: 100%;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.btn-edit:hover {
+    background: #2980b9;
+}
+
+.btn-delete {
+    width: 100%;
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.btn-delete:hover {
+    background: #c0392b;
+}
+
+
 .btn-login {
     width: 100%;
     background: #2c3e50;
@@ -116,9 +155,9 @@ body {
     background: #1a252f;
 }
 
-/* Estilo del Mapa / Croquis */
+
 .map-section {
-    background: #2c3e50; /* Asfalto */
+    background: #2c3e50; 
     padding: 40px;
     border-radius: 12px;
     color: #fff;
@@ -140,7 +179,7 @@ body {
     border: 2px dashed #f1c40f;
 }
 
-/* Línea de carretera central */
+
 .road {
     height: 40px;
     margin: 20px 0;
@@ -168,34 +207,31 @@ body {
     transition: all 0.3s;
 }
 
-.slot.available {
+.slot{
     background: rgba(46, 204, 113, 0.1);
     border-color: #2ecc71;
     color: #2ecc71;
 }
-
-.slot.available:hover {
-    background: #2ecc71;
-    color: #fff;
-    transform: scale(1.05);
+.slot-moto {
+    aspect-ratio: 1 / 1.2;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
-.slot.occupied {
-    background: rgba(231, 76, 60, 0.2);
-    border-color: #e74c3c;
-    color: #e74c3c;
-    cursor: not-allowed;
-    position: relative;
+.slot-moto{
+    background: rgba(46, 204, 113, 0.1);
+    border-color: #79ff44;
+    color: #47f82f;
 }
 
-.slot.occupied::after {
-    content: "🚗";
-    font-size: 1.2rem;
-    position: absolute;
-    opacity: 0.5;
-}
 
-/* Leyenda */
+
 .map-legend {
     display: flex;
     justify-content: center;
@@ -219,14 +255,13 @@ body {
 .box.available { background: #2ecc71; }
 .box.occupied { background: #e74c3c; }
 
-/* --- Responsividad --- */
 @media (max-width: 992px) {
     .registro-container {
         grid-template-columns: 1fr;
     }
     
     .map-section {
-        order: -1; /* El mapa sale primero en tablets/móvil */
+        order: -1; 
     }
 }
 
