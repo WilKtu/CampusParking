@@ -1,5 +1,3 @@
-/* --- Estilos para la página de Login --- */
-
 .login-page {
     background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
     min-height: 100vh;
@@ -31,7 +29,7 @@
     padding: 2.5rem;
     border-radius: 15px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-    border-top: 8px solid #f1c40f; /* Detalle amarillo vial */
+    border-top: 8px solid #f1c40f; 
 }
 
 .login-header {
@@ -56,7 +54,6 @@
     font-size: 0.9rem;
 }
 
-/* Campos de entrada */
 .input-group {
     margin-bottom: 1.5rem;
 }
@@ -83,7 +80,6 @@
     border-color: #f1c40f;
 }
 
-/* Opciones y Botón */
 .login-options {
     display: flex;
     justify-content: space-between;
@@ -131,7 +127,6 @@
     text-decoration: none;
 }
 
-/* Ajuste para móviles */
 @media (max-width: 480px) {
     .login-box {
         padding: 1.5rem;

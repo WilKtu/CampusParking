@@ -136,6 +136,19 @@ form button {
     background: #c0392b;
 }
 
+/* Espacios libres */
+.slot.available, .slot-moto.available {
+    background: rgba(46, 204, 113, 0.1);
+    border-color: #2ecc71;
+    color: #2ecc71;
+}
+
+/* Espacios ocupados */
+.slot.occupied, .slot-moto.occupied {
+    background: rgba(231, 76, 60, 0.1);
+    border-color: #e74c3c;
+    color: #e74c3c;
+}
 
 .btn-login {
     width: 100%;
