@@ -57,6 +57,35 @@ body {
 }
 
 .input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.input-group select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-group select:focus {
+    border-color: #007bff;
+    background-color: #fff;
+}
+
+.input-group {
     margin-bottom: 20px;
 }
 
@@ -100,50 +129,47 @@ form button {
     max-width: 150px; 
 }
 
-.btn-edit {
-    width: 100%;
-    background: #3498db;
-    color: #fff;
-    border: none;
-    padding: 15px;
-    border-radius: 6px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.3s;
-    margin-top: 10px;
+
+.registro-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
 }
 
-.btn-edit:hover {
-    background: #2980b9;
+/* Estilo para los registros */
+.registro-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Botones de editar y eliminar */
+.btn-edit, .btn-delete {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-edit {
+    background-color: #007bff;
+    color: #fff;
 }
 
 .btn-delete {
-    width: 100%;
-    background: #e74c3c;
+    background-color: #dc3545;
     color: #fff;
-    border: none;
-    padding: 15px;
-    border-radius: 6px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.3s;
-    margin-top: 10px;
 }
 
-.btn-delete:hover {
-    background: #c0392b;
-}
-
-/* Espacios libres */
 .slot.available, .slot-moto.available {
     background: rgba(46, 204, 113, 0.1);
     border-color: #2ecc71;
     color: #2ecc71;
 }
 
-/* Espacios ocupados */
 .slot.occupied, .slot-moto.occupied {
     background: rgba(231, 76, 60, 0.1);
     border-color: #e74c3c;
@@ -192,6 +218,33 @@ form button {
     border: 2px dashed #f1c40f;
 }
 
+.slot.selected, .slot-moto.selected {
+    background-color: #ffca28 !important; 
+    border: 2px solid black;
+}
+
+.slot.occupied, .slot-moto.occupied {
+    background-color: #e53935 !important; 
+    color: white;
+    cursor: not-allowed;
+    pointer-events: none; 
+}
+
+.tabla-registros {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+}
+.tabla-registros th, .tabla-registros td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+.tabla-registros th {
+    background-color: #003554;
+    color: white;
+}
 
 .road {
     height: 40px;
