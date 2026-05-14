@@ -8,20 +8,28 @@
     <title>Registrar Auto - CampusParking GT</title>
 </head>
 <body class="registro-page">
-    <div class="back-nav">
-        <a href="Index.html">Volver al Inicio</a>
+    <nav class="main-nav">
+        <button><a href="Index.html">Inicio</a></button>
+        <button onclick="mostrarFactura()">Factura</button>
+        <button><a href="login.html">Cerrar Sesión</a></button>
+    </nav>
+
+    <div id="history-container" style="display: none; padding: 20px; background-color: #f9f9f9; border: 1px solid #ccc; margin: 20px;">
+        <h3>Historial de Autos</h3>
+        <ul id="history-list">
+            
+        </ul>
     </div>
 
     <main class="registro-container">
         <section class="form-section">
             <div class="registro-box">
-                <h2>Registrar Vehículo</h2>
+                <h2>Registrar automovil</h2>
                 <p>Ingresa los datos para asignar un espacio (Guatemala)</p>
 
                 <form> 
                     <div class="input-group">
                         <label>Placa del Vehículo</label>
-                        <!-- Formato GT: P-123ABC o M-123ABC -->
                         <input type="text" placeholder="P-123ABC" pattern="[P|M|C|A|U|O]-[0-9]{3}[A-Z]{3}" title="Formato GT: P-123ABC" required>
                     </div>
                     <div class="input-group">
@@ -53,7 +61,7 @@
                         <label>Espacio Seleccionado</label>
                         <input type="text" id="selected-slot" placeholder="Toca un espacio en el mapa" readonly>
                     </div>
-                    <button type="submit" class="btn-login">Confirmar Registro</button>
+                    <button type="submit" class="btn-login">Registrar</button>
                     
                 </form>
 
@@ -63,7 +71,7 @@
         <section class="map-section">
             <h3>Mapa de Disponibilidad (Sectores A y B)</h3>
             <div class="parking-map">
-                <div class="road"></div>
+                <div class="road">- - - - - - Sector A - - - - - -</div>
                 <div class="slots-container">
                     <div class="slot" data-id="A1">A1</div>
                     <div class="slot" data-id="A2">A2</div>
@@ -87,7 +95,8 @@
                     <div class="slot" data-id="A20">A20</div>
                 </div>
 
-                <div class="road"></div>
+                <div class="road">- - - - - - Sector B - - - - - -
+                </div>
                 <div class="slots-container">
                     <div class="slot-moto" data-id="B1">B1</div>
                     <div class="slot-moto" data-id="B2">B2</div>
@@ -109,8 +118,27 @@
 
         <section class="lista-section" style="margin-top: 30px; padding: 20px;">
             <h3>Vehículos en el Campus (Registros Actuales)</h3>
-            <div id="lista-vehiculos-container">
-
+            <table class="vehicle-list">
+                <thead>
+                    <tr>
+                        <th>Placa</th>
+                        <th>Marca/Modelo</th>
+                        <th>Tipo</th>
+                        <th>Fecha de Ingreso</th>
+                        <th>Hora de Entrada</th>
+                        <th>Espacio Asignado</th>
+                    </tr>
+                </thead>
+                <tbody id="vehicle-table-body">
+                    
+                </tbody>
+            </table>
+            <div id="factura-container" style="display: none; padding: 20px; background-color: #f9f9f9; border: 1px solid #ccc; margin: 20px;">
+                <h3>Factura del Servicio</h3>
+                <div id="factura-detalles">
+                    <!-- Aquí se llenarán los detalles de la factura -->
+                </div>
+                <button onclick="cerrarFactura()" style="margin-top: 10px; padding: 10px; background-color: #e74c3c; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Cerrar</button>
             </div>
         </section>
         <script src="./registro.js"></script>
