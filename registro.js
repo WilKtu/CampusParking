@@ -30,6 +30,19 @@ function actualizarMapa() {
     mostrarListaVehiculos(); 
 }
 
+function obtenerHoraActual() {
+    const ahora = new Date();
+    let horas = ahora.getHours()
+    const minutos = String(ahora.getMinutes()).padStart(2, '0');
+    const ampm = horas >= 12 ? 'PM' : 'AM';
+    
+    horas = horas % 12;
+    horas = horas ? horas : 12; 
+    const horaStr = String(horas).padStart(2, '0');
+
+    return `${horaStr}:${minutos} ${ampm}`;
+}
+
 
 function mostrarListaVehiculos() {
     const registros = JSON.parse(localStorage.getItem("registros")) || [];
@@ -45,7 +58,7 @@ function mostrarListaVehiculos() {
     let html = "";
     
     registros.forEach((v, index) => {
-        const horaMostrada = v.horaEntrada ? v.horaEntrada : '--:--';
+        const horaMostrada = v.horaEntrada ? v.horaEntrada : obtenerHoraActual();
         
         html += `
             <tr>
